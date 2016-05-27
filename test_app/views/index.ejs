@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Words Test</title>
+</head>
+<body>
+  <h2>Words Test</h2>
+  <div id="holder">
+  <% for(var i=0;i<data.length;i++) { %>
+    <div class="preview">
+      <h3><%= data[i]._id %></h3>
+      <a href="/test/<%= data[i]._id %>" ><%= data[i].word %></a>
+      </div>  
+  <% } %>
+  <br>
+  <a href="/test/new">Add a New Word</a>
+  </div>
+</body>
+</html>
