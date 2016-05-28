@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Editing <%= title %></title>
+</head>
+<body>
+  <h2>Edit <%= title %></h2>
+  <form action="/mad-libs/<%= _id %>" method="POST">
+    <label>Noun</label>
+    <input type="text" name="noun1" value="<%= noun1 %>"></input><br><br>
+    <label>Adjective</label>
+    <input type="text" name="adjective1" value="<%= adjective1 %>"></input><br><br>
+    <label>Verb</label>
+    <input type="text" name="verb1" value="<%= verb1 %>"></input><br><br>
+    <label>Adverb</label>
+    <input type="text" name="adverb1" value="<%= adverb1 %>"></input><br><br>
+    <label>Noun</label>
+    <input type="text" name="noun2" value="<%= noun2 %>"></input><br><br>
+    <label>Adjective</label>
+    <input type="text" name="adjective2" value="<%= adjective2 %>"></input><br><br>
+    <label>Plural Noun</label>
+    <input type="text" name="pluralNoun1" value="<%= pluralNoun1 %>"></input><br><br>
+    <label>Plural Noun</label>
+    <input type="text" name="pluralNoun2" value="<%= pluralNoun2 %>"></input><br><br>
+    <label>Plural Noun</label>
+    <input type="text" name="pluralNoun3" value="<%= pluralNoun3 %>"></input><br><br>
+    <label>Part of the Body</label>
+    <input type="text" name="partOfTheBody1" value="<%= partOfTheBody1 %>"></input><br><br>
+    <label>Noun</label>
+    <input type="text" name="noun3" value="<%= noun3 %>"></input><br><br>
+    <label>Noun</label>
+    <input type="text" name="noun4" value="<%= noun4 %>"</input><br><br>
+    <label>Noun</label>
+    <input type="text" name="noun5" value="<%= noun5%>"</input><br><br>
+    <label>Noun</label>
+    <input type="text" name="noun6" value="<%= noun6 %>"></input><br><br>
+    <label>Part of the Body</label>
+    <input type="text" name="partOfTheBody2" value="<%= partOfTheBody2 %>"></input>
+    <input type="hidden" name="_method" value="PUT"/>
+    <button>Submit</button>
+  </form>
+  <br>
+  <br>
+<a href="/mad-libs">GO HOME</a>
+</body>
+</html>

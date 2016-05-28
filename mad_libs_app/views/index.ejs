@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mad Libs with Pictures</title>
+</head>
+<body>
+  <h2>Mad Libs with Pictures</h2>
+  <a href="/mad-libs/new">Talk Like a Pirate</a>
+  <div id="existing-holder">
+  <% for(var i=0;i<data.length;i++) { %>
+    <div class="preview">
+    <hr>
+      <h3>Previously Created Mad Libs</h3>
+      <a href="/mad-libs/<%= data[i]._id %>" ><%= data[i].title %> <%= data[i]._id %></a>
+      </div>  
+  <% } %>
+  </div>
+</body>
+</html>

@@ -24,7 +24,7 @@ MVP Criteria:
 
 Project Plan
 Friday
-- figure out Flickr api - this is really frustraiting, I have no idea how to even start with this
+- figure out Flickr api
 
 Saturday
 - build basic CRUD features, test their functionality
