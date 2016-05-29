@@ -1,7 +1,7 @@
 // REQUIREMENTS
 var express = require('express');
 var router = express.Router();
-var Form1 = require('../models/form1.js');
+var Form = require('../models/form1.js');
 var request = require('request');
 var flickr = require("flickrapi");
 var flickrOptions = {
@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
   // this pair of console log and res.send will test that the route works.
   // console.log('hello');
   // res.send('goodbye')
-  Form1.find().then(function(form) {
+  Form.find().then(function(form) {
     res.render("index.ejs", {data: form})
   })
 });
@@ -51,7 +51,7 @@ router.get("/newdentist", function(req, res){
 // Show Page Pirate Mad Lib
 router.get('/pirate/:id', function(req, res) {
   console.log(req.params.id);
-  Form1.findById(req.params.id).then(function(form) {
+  Form.findById(req.params.id).then(function(form) {
     // res.json(form);
     res.render("./showPages/pirate.ejs", form);
   });
@@ -60,7 +60,7 @@ router.get('/pirate/:id', function(req, res) {
 // Show Page Date Mad Lib
 router.get('/date/:id', function(req, res) {
   console.log(req.params.id);
-  Form1.findById(req.params.id).then(function(form) {
+  Form.findById(req.params.id).then(function(form) {
     // res.json(form);
     res.render("./showPages/date.ejs", form);
   });
@@ -69,25 +69,47 @@ router.get('/date/:id', function(req, res) {
 // Show Page Study Mad Lib
 router.get('/study/:id', function(req, res) {
   console.log(req.params.id);
-  Form1.findById(req.params.id).then(function(form) {
+  Form.findById(req.params.id).then(function(form) {
     // res.json(form);
     res.render("./showPages/study.ejs", form);
   });
 });
 
 // Show Page Dentist Mad Lib
-router.get('dentist/:id', function(req, res) {
-  console.log(req.params.id);
-  Form1.findById(req.params.id).then(function(form) {
+router.get('/dentist/:id', function(req, res) {
+  // console.log("hello");
+  // console.log(req.params.id);
+  Form.findById(req.params.id).then(function(form) {
     // res.json(form);
     res.render("./showPages/dentist.ejs", form);
   });
 });
 
-//Edit Page
-router.get("/:id/edit", function(req, res) {
-  Form1.findById(req.params.id).then(function(form) {
-    res.render("edit.ejs", form);
+//Edit Page Pirate Mad Lib
+router.get("/pirate/:id/edit", function(req, res) {
+  Form.findById(req.params.id).then(function(form) {
+    res.render("./editPages/pirate.ejs", form);
+  });
+});
+
+//Edit Page Date Mad Lib
+router.get("/date/:id/edit", function(req, res) {
+  Form.findById(req.params.id).then(function(form) {
+    res.render("./editPages/date.ejs", form);
+  });
+});
+
+//Edit Page Study Mad Lib
+router.get("/study/:id/edit", function(req, res) {
+  Form.findById(req.params.id).then(function(form) {
+    res.render("./editPages/study.ejs", form);
+  });
+});
+
+//Edit Page Dentist Mad Lib
+router.get("/dentist/:id/edit", function(req, res) {
+  Form.findById(req.params.id).then(function(form) {
+    res.render("./editPages/dentist.ejs", form);
   });
 });
 
@@ -95,61 +117,71 @@ router.get("/:id/edit", function(req, res) {
 router.put("/:id", function(req, res) {
   // console.log(req.body);
   // console.log(req.params.id); 
-  Form1.findOneAndUpdate( { _id: req.params.id }, req.body, function(err, form) {
-    res.redirect("/mad-libs/" + req.params.id);
+  Form.findOneAndUpdate( { _id: req.params.id }, req.body, function(err, form) {
+    res.redirect("/mad-libs/" + form.title + "/" + req.params.id);
   })
 })
 
-// // Create
-// router.post('/', function(req, res) {
-//   var noun1 = req.body.noun1;
-//   flickr.tokenOnly(flickrOptions, function(error, flickr) {
-//     flickr.test.echo({"test": "test"}, function(err,result) {
-//       if(err) { return console.log("note: error connecting to the flickr API"); }
-//       var noun1Result;
-//       flickr.photos.search({ 
-//         tags: noun1,
-//         per_page: 1,
-//         page: 1 }, function(err,result) {
-//         if(err) { return console.log("error:", err); }
-//         noun1Result = result.photos.photo[0];
-//         var img1 = "https://farm" + noun1Result.farm + ".staticflickr.com/" + noun1Result.server + "/" + noun1Result.id + "_" + noun1Result.secret + ".jpg"
-//         req.body.image_noun1 = img1;
-//         // console.log(req.body);
-//         var newform = new Test(req.body);
-//         newform.save(function(err) {
-//           if(err) {
-//             console.log(err);
-//           } else {
-//             // res.send(product);
-//             res.redirect("/mad-libs");
-//           }
-//         });
-//       });
-//     });
-//   });
-// });
-
 // Create
 router.post('/', function(req, res) {
-  // console.log(req.body);
-  // res.send("post request");
-  var newform = new Form1(req.body);
-  newform.save(function(err) {
-    if(err) {
-      console.log(err);
-    } else {
-      res.redirect("/mad-libs");
-    }
+  var word = req.body.title;
+  flickr.tokenOnly(flickrOptions, function(error, flickr) {
+    flickr.test.echo({"test": "test"}, function(err,result) {
+      if(err) { return console.log("note: error connecting to the flickr API"); }
+      var noun1Result;
+      flickr.photos.search({ 
+        tags: word,
+        per_page: 4,
+        page: 1 }, function(err,result) {
+        if(err) { return console.log("error:", err); }
+        console.log(result.photos.photo.length + " results found. First result:");
+        // console.log("this is the result in their code: " + JSON.stringify(result.photos.photo[0],false,2));
+        var firstResult = result.photos.photo[0];
+        var img1 = "https://farm" + firstResult.farm + ".staticflickr.com/" + firstResult.server + "/" + firstResult.id + "_" + firstResult.secret + ".jpg"
+        req.body.image1 = img1;
+        var secondResult = result.photos.photo[1];
+        var img2 = "https://farm" + secondResult.farm + ".staticflickr.com/" + secondResult.server + "/" + secondResult.id + "_" + secondResult.secret + ".jpg"
+        req.body.image2 = img2;
+        var thirdResult = result.photos.photo[2];
+        var img3 = "https://farm" + thirdResult.farm + ".staticflickr.com/" + thirdResult.server + "/" + thirdResult.id + "_" + thirdResult.secret + ".jpg"
+        req.body.image3 = img3;
+        var fourthResult = result.photos.photo[3];
+        var img4 = "https://farm" + fourthResult.farm + ".staticflickr.com/" + fourthResult.server + "/" + fourthResult.id + "_" + fourthResult.secret + ".jpg"
+        req.body.image4 = img4;
+        // console.log(req.body);
+        var newform = new Form(req.body);
+        newform.save(function(err) {
+          if(err) {
+            console.log(err);
+          } else {
+            // res.send(product);
+            res.redirect("/mad-libs");
+          }
+        });
+      });
+    });
   });
 });
 
+// // Create
+// router.post('/', function(req, res) {
+//   // console.log(req.body);
+//   // res.send("post request");
+//   var newform = new Form(req.body);
+//   newform.save(function(err) {
+//     if(err) {
+//       console.log(err);
+//     } else {
+//       res.redirect("/mad-libs");
+//     }
+//   });
+// });
+
 // Delete
 router.delete('/:id', function(req, res) {
-  Form1.findOneAndRemove({_id: req.params.id}, function(err) {
+  Form.findOneAndRemove({_id: req.params.id}, function(err) {
     if(err) console.log(err);
     console.log("Mad Lib deleted");
-    // res.send("Product deleted");
     res.redirect("/mad-libs");  
   });
 });

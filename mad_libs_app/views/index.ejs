@@ -10,13 +10,27 @@
   <a href="/mad-libs/newdate">How to Date The Coolest Guy/Girl in School</a>
   <a href="/mad-libs/newstudy">How to Study</a>
   <a href="/mad-libs/newdentist">A Visit to the Dentist</a>
+  <hr>
   <div id="existing-holder">
+  <h3>Previously Created Mad Libs</h3>
   <% for(var i=0;i<data.length;i++) { %>
-    <div class="preview">
-    <hr>
-      <h3>Previously Created Mad Libs</h3>
-      <a href="/mad-libs/<%= data[i]._id %>" ><%= data[i].title %> <%= data[i]._id %></a>
-      </div>  
+    <% if (data[i].title == "pirate") { %>
+      <div class="preview">
+        <a href="/mad-libs/pirate/<%= data[i]._id %>" >Talk Like a Pirate</a>
+      </div>
+    <% } else if (data[i].title == "date") { %>
+      <div class="preview">
+        <a href="/mad-libs/date/<%= data[i]._id %>" >How to Date The Coolest Guy/Girl in School</a>
+      </div>
+    <% } else if (data[i].title == "study") { %>
+      <div class="preview">
+        <a href="/mad-libs/study/<%= data[i]._id %>" >How to Study</a>
+      </div>
+    <% } else if (data[i].title == "dentist") { %>
+      <div class="preview">
+        <a href="/mad-libs/dentist/<%= data[i]._id %>" >A Visit to the Dentist</a>
+      </div>
+    <% } %>
   <% } %>
   </div>
 </body>

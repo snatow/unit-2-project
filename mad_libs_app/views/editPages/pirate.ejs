@@ -2,10 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Editing <%= title %></title>
+  <title>Editing Talk Like a Pirate</title>
 </head>
 <body>
-  <h2>Edit <%= title %></h2>
+  <h2>Edit Talk Like a Pirate</h2>
   <form action="/mad-libs/<%= _id %>" method="POST">
     <label>Noun</label>
     <input type="text" name="noun1" value="<%= noun1 %>"></input><br><br>
@@ -39,6 +39,12 @@
     <input type="text" name="partOfTheBody2" value="<%= partOfTheBody2 %>"></input>
     <input type="hidden" name="_method" value="PUT"/>
     <button>Submit</button>
+  </form>
+  <br>
+  <br>
+  <form action="/mad-libs/<%= _id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <button id="delete">Delete</button>
   </form>
   <br>
   <br>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Editing How to Date The Coolest Guy/Girl in School</title>
+</head>
+<body>
+  <h2>Edit How to Date The Coolest Guy/Girl in School</h2>
+  <form action="/mad-libs/<%= _id %>" method="POST">
+    <label>Plural Noun</label>
+    <input type="text" name="pluralNoun1" value="<%= pluralNoun1 %>"></input><br><br>
+    <label>Adverb</label>
+    <input type="text" name="adverb1" value="<%= adverb1 %>"></input><br><br>
+    <label>Verb</label>
+    <input type="text" name="verb1" value="<%= verb1 %>"></input><br><br>
+    <label>Article of Clothing</label>
+    <input type="text" name="clothing" value="<%= clothing %>"></input><br><br>
+    <label>Part of the Body</label>
+    <input type="text" name="bodyPart1" value="<%= bodyPart1 %>"></input><br><br>
+    <label>Adjective</label>
+    <input type="text" name="adjective1" value="<%= adjective1 %>"></input><br><br>
+    <label>Noun</label>
+    <input type="text" name="noun1" value="<%= noun1 %>"</input><br><br>
+    <label>Plural Noun</label>
+    <input type="text" name="pluralNoun2" value="<%= pluralNoun2 %>"</input><br><br>
+    <label>Part of the Body</label>
+    <input type="text" name="bodyPart2" value="<%= bodyPart2 %>"</input><br><br>
+    <label>Noun</label>
+    <input type="text" name="noun2" value="<%= noun2 %>"</input><br><br>
+    <label>Noun</label>
+    <input type="text" name="noun3" value="<%= noun3 %>"</input><br><br>
+    <label>Verb ending in "ing"</label>
+    <input type="text" name="verbing" value="<%= verbing %>"</input><br><br>
+    <label>Adjective</label>
+    <input type="text" name="adjective2" value="<%= adjective2 %>"</input><br><br>
+    <label>Adjective</label>
+    <input type="text" name="adjective3" value="<%= adjective3 %>"</input><br><br>
+    <label>Verb</label>
+    <input type="text" name="verb2" value="<%= verb2 %>"</input><br><br>
+    <input type="hidden" name="_method" value="PUT"/>
+    <button>Submit</button>
+  </form>
+  <br>
+  <br>
+  <form action="/mad-libs/<%= _id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <button id="delete">Delete</button>
+  </form>
+  <br>
+  <br>
+  <a href="/mad-libs">GO HOME</a>
+</body>
+</html>
