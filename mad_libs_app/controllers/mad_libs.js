@@ -3,8 +3,6 @@ var express = require('express');
 var router = express.Router();
 var Form1 = require('../models/form1.js');
 var request = require('request');
-// var Flickr = require("flickrapi"),
-//     flickrData = flickr.loadLocally();
 var flickr = require("flickrapi");
 var flickrOptions = {
   api_key: process.env.FLICKR_API_KEY,
@@ -22,19 +20,67 @@ router.get('/', function(req, res) {
   })
 });
 
-//New Page
-router.get("/new", function(req, res){
+//New Page Pirate Mad Lib
+router.get("/newpirate", function(req, res){
   // console.log('hello');
   // res.send('goodbye')
-  res.render("new.ejs");
+  res.render("./newPages/pirate.ejs");
 });
 
-// Show Page
-router.get('/:id', function(req, res) {
+//New Page Date Mad Lib
+router.get("/newdate", function(req, res){
+  // console.log('hello');
+  // res.send('goodbye')
+  res.render("./newPages/date.ejs");
+});
+
+//New Page Study Mad Lib
+router.get("/newstudy", function(req, res){
+  // console.log('hello');
+  // res.send('goodbye')
+  res.render("./newPages/study.ejs");
+});
+
+//New Page Dentist Mad Lib
+router.get("/newdentist", function(req, res){
+  // console.log('hello');
+  // res.send('goodbye')
+  res.render("./newPages/dentist.ejs");
+});
+
+// Show Page Pirate Mad Lib
+router.get('/pirate/:id', function(req, res) {
   console.log(req.params.id);
   Form1.findById(req.params.id).then(function(form) {
     // res.json(form);
-    res.render("show.ejs", form);
+    res.render("./showPages/pirate.ejs", form);
+  });
+});
+
+// Show Page Date Mad Lib
+router.get('/date/:id', function(req, res) {
+  console.log(req.params.id);
+  Form1.findById(req.params.id).then(function(form) {
+    // res.json(form);
+    res.render("./showPages/date.ejs", form);
+  });
+});
+
+// Show Page Study Mad Lib
+router.get('/study/:id', function(req, res) {
+  console.log(req.params.id);
+  Form1.findById(req.params.id).then(function(form) {
+    // res.json(form);
+    res.render("./showPages/study.ejs", form);
+  });
+});
+
+// Show Page Dentist Mad Lib
+router.get('dentist/:id', function(req, res) {
+  console.log(req.params.id);
+  Form1.findById(req.params.id).then(function(form) {
+    // res.json(form);
+    res.render("./showPages/dentist.ejs", form);
   });
 });
 
