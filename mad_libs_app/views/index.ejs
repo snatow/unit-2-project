@@ -2,34 +2,39 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../styles/index.css">
   <title>Mad Libs with Pictures</title>
 </head>
 <body>
   <h2>Mad Libs with Pictures</h2>
-  <a href="/mad-libs/newpirate">Talk Like a Pirate</a>
-  <a href="/mad-libs/newdate">How to Date The Coolest Guy/Girl in School</a>
-  <a href="/mad-libs/newstudy">How to Study</a>
-  <a href="/mad-libs/newdentist">A Visit to the Dentist</a>
+  <h3>Choose your Text Adventure</h3>
+  <div id="options">
+    <div class="opt">
+      <a href="/mad-libs/newpirate">Talk Like a Pirate</a>
+    </div>
+    <div class="opt">
+      <a href="/mad-libs/newdate">How to Date The Coolest Guy/Girl in School</a>
+    </div>
+    <div class="opt">
+      <a href="/mad-libs/newstudy">How to Study</a>
+    </div>
+    <div class="opt">
+      <a href="/mad-libs/newdentist">A Visit to the Dentist</a>
+    </div>
+  </div>
+  
   <hr>
-  <div id="existing-holder">
+  <div id="existing">
   <h3>Previously Created Mad Libs</h3>
   <% for(var i=0;i<data.length;i++) { %>
     <% if (data[i].title == "pirate") { %>
-      <div class="preview">
-        <a href="/mad-libs/pirate/<%= data[i]._id %>" >Talk Like a Pirate</a>
-      </div>
+      <li><img class="icon" src="http://bestwindows8apps.s3.amazonaws.com/icons/Icon.266738.png"><a href="/mad-libs/pirate/<%= data[i]._id %>" >Talk Like a Pirate</a></li>
     <% } else if (data[i].title == "date") { %>
-      <div class="preview">
-        <a href="/mad-libs/date/<%= data[i]._id %>" >How to Date The Coolest Guy/Girl in School</a>
-      </div>
+      <li><img class="icon" src="http://bestwindows8apps.s3.amazonaws.com/icons/Icon.266738.png"><a href="/mad-libs/date/<%= data[i]._id %>" >How to Date The Coolest Guy/Girl in School</a></li>
     <% } else if (data[i].title == "study") { %>
-      <div class="preview">
-        <a href="/mad-libs/study/<%= data[i]._id %>" >How to Study</a>
-      </div>
+      <li><img class="icon" src="http://bestwindows8apps.s3.amazonaws.com/icons/Icon.266738.png"><a href="/mad-libs/study/<%= data[i]._id %>" >How to Study</a></li>
     <% } else if (data[i].title == "dentist") { %>
-      <div class="preview">
-        <a href="/mad-libs/dentist/<%= data[i]._id %>" >A Visit to the Dentist</a>
-      </div>
+      <li><img class="icon" src="http://bestwindows8apps.s3.amazonaws.com/icons/Icon.266738.png"><a href="/mad-libs/dentist/<%= data[i]._id %>" >A Visit to the Dentist</a></li>
     <% } %>
   <% } %>
   </div>

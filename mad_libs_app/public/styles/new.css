@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: lightblue;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 25px;
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: green;
+}
+
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  color: red;
+}
+
+#link {
+  text-align: center;
+}
+
+#delete {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (min-width: 700px) {
+
+  form {
+    width: 700px;
+  }
+
+  #left {
+    margin-left: 70px;
+  }
+
+  .column {
+    display: inline-block;
+    float: left;
+    width: 300px;
+  }
+
+}

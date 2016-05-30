@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <% include ../partials/newhead.ejs %>
+  <link rel="stylesheet" type="text/css" href="../../../styles/new.css">
   <title>How to Study</title>
 </head>
 <body>
   <h2>How to Study</h2>
+  <div id="link">
+    <a href="/mad-libs">Home Page</a>
+  </div>
+  <br>
+  <br>
   <form action="/mad-libs/<%= _id %>" method="POST">
-    <label>Adjective</label>
-    <input type="text" name="adjective1" value="<%= adjective1 %>"></input><br><br>
-    <label>Adjective</label>
-    <input type="text" name="adjective2" value="<%= adjective2 %>"></input><br><br>
-    <label>Noun</label>
-    <input type="text" name="noun1" value="<%= noun1 %>"></input><br><br>
-    <label>Noun</label>
-    <input type="text" name="noun2" value="<%= noun2 %>"></input><br><br>
-    <label>Plural Noun</label>
-    <input type="text" name="pluralNoun1" value="<%= pluralNoun1 %>"></input><br><br>
-    <label>Adverb</label>
-    <input type="text" name="adverb1" value="<%= adverb1 %>"></input><br><br>
-    <label>Verb</label>
-    <input type="text" name="verb1" value="<%= verb1 %>"></input><br><br>
-    <label>Adjective</label>
-    <input type="text" name="adjective3" value="<%= adjective3 %>"></input><br><br>
-    <label>Plural Noun</label>
-    <input type="text" name="pluralNoun2" value="<%= pluralNoun2 %>"></input><br><br>
-    <label>Adjective</label>
-    <input type="text" name="adjective4" value="<%= adjective4 %>"></input><br><br>
-    <label>Adjective</label>
-    <input type="text" name="adjective5" value="<%= adjective5 %>"></input><br><br>
-    <label>Adjective</label>
-    <input type="text" name="adjective6" value="<%= adjective5 %>"></input><br><br>
-    <label>Plural Noun</label>
-    <input type="text" name="pluralNoun3" value="<%= pluralNoun3 %>"></input><br><br>
-    <input type="hidden" name="_method" value="PUT"/>
-    <button>Submit</button>
+    <div id="left" class="column">
+      <label>Adjective</label>
+      <input type="text" name="adjective1" value="<%= adjective1 %>"></input><br><br>
+      <label>Adjective</label>
+      <input type="text" name="adjective2" value="<%= adjective2 %>"></input><br><br>
+      <label>Noun</label>
+      <input type="text" name="noun1" value="<%= noun1 %>"></input><br><br>
+      <label>Noun</label>
+      <input type="text" name="noun2" value="<%= noun2 %>"></input><br><br>
+      <label>Plural Noun</label>
+      <input type="text" name="pluralNoun1" value="<%= pluralNoun1 %>"></input><br><br>
+      <label>Adverb</label>
+      <input type="text" name="adverb1" value="<%= adverb1 %>"></input><br><br>
+      <label>Verb</label>
+      <input type="text" name="verb1" value="<%= verb1 %>"></input><br><br>
+    </div>
+    <div class="column">
+      <label>Adjective</label>
+      <input type="text" name="adjective3" value="<%= adjective3 %>"></input><br><br>
+      <label>Plural Noun</label>
+      <input type="text" name="pluralNoun2" value="<%= pluralNoun2 %>"></input><br><br>
+      <label>Adjective</label>
+      <input type="text" name="adjective4" value="<%= adjective4 %>"></input><br><br>
+      <label>Adjective</label>
+      <input type="text" name="adjective5" value="<%= adjective5 %>"></input><br><br>
+      <label>Adjective</label>
+      <input type="text" name="adjective6" value="<%= adjective5 %>"></input><br><br>
+      <label>Plural Noun</label>
+      <input type="text" name="pluralNoun3" value="<%= pluralNoun3 %>"></input><br><br>
+      <input type="hidden" name="_method" value="PUT"/>
+      <br>
+      <br>
+      <button>Submit</button>
+      <br>
+      <br>
+      <br>
+    </div>
   </form>
-  <br>
-  <br>
-  <form action="/mad-libs/<%= _id %>" method="POST">
+  <form id="delete" action="/mad-libs/<%= _id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE"/>
     <button id="delete">Delete</button>
   </form>
-  <br>
-  <br>
-<a href="/mad-libs">GO HOME</a>
 </body>
 </html>

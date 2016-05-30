@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <% include ../partials/newhead.ejs %>
+  <link rel="stylesheet" type="text/css" href="../../../styles/new.css">
   <title>Editing Talk Like a Pirate</title>
 </head>
 <body>
   <h2>Edit Talk Like a Pirate</h2>
+  <div id="link">
+    <a href="/mad-libs">Home Page</a>
+  </div>
+  <br>
+  <br>
   <form action="/mad-libs/<%= _id %>" method="POST">
     <label>Noun</label>
     <input type="text" name="noun1" value="<%= noun1 %>"></input><br><br>
@@ -26,7 +32,7 @@
     <label>Plural Noun</label>
     <input type="text" name="pluralNoun3" value="<%= pluralNoun3 %>"></input><br><br>
     <label>Part of the Body</label>
-    <input type="text" name="partOfTheBody1" value="<%= partOfTheBody1 %>"></input><br><br>
+    <input type="text" name="bodyPart1" value="<%= bodyPart1 %>"></input><br><br>
     <label>Noun</label>
     <input type="text" name="noun3" value="<%= noun3 %>"></input><br><br>
     <label>Noun</label>
@@ -36,18 +42,18 @@
     <label>Noun</label>
     <input type="text" name="noun6" value="<%= noun6 %>"></input><br><br>
     <label>Part of the Body</label>
-    <input type="text" name="partOfTheBody2" value="<%= partOfTheBody2 %>"></input>
+    <input type="text" name="bodyPart2" value="<%= bodyPart2 %>"></input>
     <input type="hidden" name="_method" value="PUT"/>
+    <br>
+    <br>
     <button>Submit</button>
+    <br>
+    <br>
+    <br>
   </form>
-  <br>
-  <br>
-  <form action="/mad-libs/<%= _id %>" method="POST">
+  <form id="delete" action="/mad-libs/<%= _id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE"/>
-    <button id="delete">Delete</button>
+    <button >Delete</button>
   </form>
-  <br>
-  <br>
-<a href="/mad-libs">GO HOME</a>
 </body>
 </html>

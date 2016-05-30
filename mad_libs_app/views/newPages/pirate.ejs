@@ -1,64 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <% include ../partials/newhead.ejs %>
+  <link rel="stylesheet" type="text/css" href="http://localhost:3000/styles/new.css">
   <title>Talk Like a Pirate</title>
 </head>
 <body>
   <h2>Talk Like a Pirate</h2>
-  <form action="/mad-libs" method="POST">
-    <input type="text" name="title" style="display:none" value="pirate"></input>
-    <label>Noun</label>
-    <input type="text" name="noun1" placeholder="noun"></input><br><br>
-    <label>Adjective</label>
-    <input type="text" name="adjective1" placeholder="adjective"></input><br><br>
-    <label>Verb</label>
-    <input type="text" name="verb1" placeholder="verb"></input><br><br>
-    <label>Adverb</label>
-    <input type="text" name="adverb1" placeholder="adverb"></input><br><br>
-    <label>Noun</label>
-    <input type="text" name="noun2" placeholder="noun"></input><br><br>
-    <label>Adjective</label>
-    <input type="text" name="adjective2" placeholder="adjective"></input><br><br>
-    <label>Plural Noun</label>
-    <input type="text" name="pluralNoun1" placeholder="plural noun"></input><br><br>
-    <label>Plural Noun</label>
-    <input type="text" name="pluralNoun2" placeholder="plural noun"></input><br><br>
-    <label>Plural Noun</label>
-    <input type="text" name="pluralNoun3" placeholder="plural noun"></input><br><br>
-    <label>Part of the Body</label>
-    <input type="text" name="bodyPart1" placeholder="body part"></input><br><br>
-    <label>Noun</label>
-    <input type="text" name="noun3" placeholder="noun"></input><br><br>
-    <label>Noun</label>
-    <input type="text" name="noun4" placeholder="noun"></input><br><br>
-    <label>Noun</label>
-    <input type="text" name="noun5" placeholder="noun"></input><br><br>
-    <label>Noun</label>
-    <input type="text" name="noun6" placeholder="noun"></input><br><br>
-    <label>Part of the Body</label>
-    <input type="text" name="bodyPart2" placeholder="body part"></input><br><br>
-    <input type="text" name="noun7" style="display:none" ></input>
-    <input type="text" name="noun8" style="display:none" ></input>
-    <input type="text" name="noun9" style="display:none" ></input>
-    <input type="text" name="bodyPart3" style="display:none" ></input>
-    <input type="text" name="adjective3" style="display:none" ></input>
-    <input type="text" name="adjective4" style="display:none" ></input>
-    <input type="text" name="adjective5" style="display:none" ></input>
-    <input type="text" name="adjective6" style="display:none" ></input>
-    <input type="text" name="verb2" style="display:none" ></input>
-    <input type="text" name="verbing" style="display:none" ></input>
-    <input type="text" name="clothing" style="display:none" ></input>
-    <input type="text" name="exclaim" style="display:none" ></input>
-    <input type="text" name="name" style="display:none" ></input>
-    <input type="text" name="image1" style="display:none" ></input>
-    <input type="text" name="image2" style="display:none" ></input>
-    <input type="text" name="image3" style="display:none" ></input>
-    <input type="text" name="image4" style="display:none" ></input>
-    <button>Submit</button>
-  </form>
+  <div id="link">
+    <a href="/mad-libs">Home Page</a>
+  </div>
   <br>
   <br>
-<a href="/mad-libs">GO HOME</a>
+    <form action="/mad-libs" method="POST">
+      <div id="left" class="column">
+        <input type="text" name="title" style="display:none" value="pirate"></input>
+        <label>Noun</label>
+        <input type="text" name="noun1" placeholder="noun"></input><br><br>
+        <label>Adjective</label>
+        <input type="text" name="adjective1" placeholder="adjective"></input><br><br>
+        <label>Verb</label>
+        <input type="text" name="verb1" placeholder="verb"></input><br><br>
+        <label>Adverb</label>
+        <input type="text" name="adverb1" placeholder="adverb"></input><br><br>
+        <label>Noun</label>
+        <input type="text" name="noun2" placeholder="noun"></input><br><br>
+        <label>Adjective</label>
+        <input type="text" name="adjective2" placeholder="adjective"></input><br><br>
+        <label>Plural Noun</label>
+        <input type="text" name="pluralNoun1" placeholder="plural noun"></input><br><br>
+        <label>Plural Noun</label>
+        <input type="text" name="pluralNoun2" placeholder="plural noun"></input><br><br>
+      </div>
+      <div class="column">
+        <label>Plural Noun</label>
+        <input type="text" name="pluralNoun3" placeholder="plural noun"></input><br><br>
+        <label>Part of the Body</label>
+        <input type="text" name="bodyPart1" placeholder="body part"></input><br><br>
+        <label>Noun</label>
+        <input type="text" name="noun3" placeholder="noun"></input><br><br>
+        <label>Noun</label>
+        <input type="text" name="noun4" placeholder="noun"></input><br><br>
+        <label>Noun</label>
+        <input type="text" name="noun5" placeholder="noun"></input><br><br>
+        <label>Noun</label>
+        <input type="text" name="noun6" placeholder="noun"></input><br><br>
+        <label>Part of the Body</label>
+        <input type="text" name="bodyPart2" placeholder="body part"></input><br><br>
+        <input type="text" name="noun7" style="display:none" ></input>
+        <input type="text" name="noun8" style="display:none" ></input>
+        <input type="text" name="noun9" style="display:none" ></input>
+        <input type="text" name="bodyPart3" style="display:none" ></input>
+        <input type="text" name="adjective3" style="display:none" ></input>
+        <input type="text" name="adjective4" style="display:none" ></input>
+        <input type="text" name="adjective5" style="display:none" ></input>
+        <input type="text" name="adjective6" style="display:none" ></input>
+        <input type="text" name="verb2" style="display:none" ></input>
+        <input type="text" name="verbing" style="display:none" ></input>
+        <input type="text" name="clothing" style="display:none" ></input>
+        <input type="text" name="exclaim" style="display:none" ></input>
+        <input type="text" name="name" style="display:none" ></input>
+        <input type="text" name="image1" style="display:none" ></input>
+        <input type="text" name="image2" style="display:none" ></input>
+        <input type="text" name="image3" style="display:none" ></input>
+        <input type="text" name="image4" style="display:none" ></input>
+        <br>
+        <br>
+        <button>Submit</button>
+      </div>
+    </form>
 </body>
 </html>
