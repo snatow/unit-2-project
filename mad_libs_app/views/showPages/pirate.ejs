@@ -2,26 +2,31 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../../styles/show.css">
   <title>Talk Like a Pirate</title>
 </head>
 <body>
   <h2>Talk Like a Pirate</h2>
-  <div>
-    <div><img src="<%= image1 %>"></div>
-    <div><img src="<%= image2 %>"></div>
+  <div id="link">
+    <a href="/mad-libs">Home Page</a>
+  </div>
+  <div class="photo-holder">
+    <div class="photo"><img src="<%= image1 %>"></div>
+    <div class="photono"></div>
+    <div class="photono"></div>
+    <div class="photo"><img src="<%= image2 %>"></div>
   </div>
   <div id="text">
     <p>Ye can always pretend to be a bloodthirsty <%= noun1 %>, threatening everyone by waving yer <%= adjective1 %> sword in the air, but until ye learn to <%= verb1 %> like a pirate, ye'll never be <% adverb1 %> accepted as an authentic <%= noun2 %>. So here's what ye do: Cleverly work into yer daily conversations <%= adjective2 %> pirate phrases such as "Ahoy there, <%= pluralNoun1 %>." "Avast, ye <%= pluralNoun2 %>." and "Shiver me <%= pluralNoun3 %>." Remember to drop all yer gs when ye say words such as <em>sailin'</em>, <em>spittin'</em> and <em>fightin'</em>. This will give ye a/an <%= bodyPart1 %> start to being recognized as a swashbucklin' <%= noun3 %>. Once ye have the lingo down pat, it helps to wear a three-cornered <%= noun4 %> on yer head, stash a/an <%= noun5 %> in yer hands, and keep a/an <%= noun6 %> perched atop yer <%= bodyPart2 %>. Aye, now ye be a real pirate!</p>
   </div>
-  <div>
-    <div><img src="<%= image3 %>"></div>
-    <div><img src="<%= image4 %>"></div>
+  <div class="photo-holder">
+    <div class="photo"><img src="<%= image3 %>"></div>
+    <div class="photono"></div>
+    <div class="photono"></div>
+    <div class="photo"><img src="<%= image4 %>"></div>
   </div>
   <br>
   <br>
-  <a href="/mad-libs/pirate/<%= _id %>/edit">Edit this Mad Lib</a>
-  <br>
-  <br>
-<a href="/mad-libs">GO HOME</a>
+  <a id="edit" href="/mad-libs/pirate/<%= _id %>/edit">Edit this Mad Lib</a>
 </body>
 </html>

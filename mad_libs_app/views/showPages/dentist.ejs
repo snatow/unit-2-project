@@ -2,13 +2,19 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../../styles/show.css">
   <title>A Visit to the Dentist</title>
 </head>
 <body>
   <h2>A Visit to the Dentist</h2>
-  <div>
-    <div><img src="<%= image1 %>"></div>
-    <div><img src="<%= image2 %>"></div>
+  <div id="link">
+    <a href="/mad-libs">Home Page</a>
+  </div>
+  <div class="photo-holder">
+    <div class="photo"><img src="<%= image1 %>"></div>
+    <div class="photono"></div>
+    <div class="photono"></div>
+    <div class="photo"><img src="<%= image2 %>"></div>
   </div>
   <div id="text">
     <p>A one-act play to be performed by two <%= pluralNoun1 %> in this room.
@@ -43,15 +49,14 @@
     <br>
     DENTIST: A day after I cash your <%= noun9 %>.</p>
   </div>
-  <div>
-    <div><img src="<%= image3 %>"></div>
-    <div><img src="<%= image4 %>"></div>
+  <divclass="photo-holder">
+    <div class="photo"><img src="<%= image3 %>"></div>
+    <div class="photono"></div>
+    <div class="photono"></div>
+    <div class="photo"><img src="<%= image4 %>"></div>
   </div>
   <br>
   <br>
-  <a href="/mad-libs/dentist/<%= _id %>/edit">Edit this Mad Lib</a>
-  <br>
-  <br>
-<a href="/mad-libs">GO HOME</a>
+  <a id="edit" href="/mad-libs/dentist/<%= _id %>/edit">Edit this Mad Lib</a>
 </body>
 </html>
