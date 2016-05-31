@@ -98,7 +98,7 @@ li {
     margin: 0 auto;
     text-align: center;
     border: 1px solid black;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
   }
 
   .opt {
@@ -107,10 +107,7 @@ li {
     margin-left: -2px;
     display: inline-block;
     box-sizing: border-box;
-    background-color: lightblue;
+    background-color: lightgrey;
   }
 
-  .opt:nth-child(2n) {
-    background-color: lightblue;
-  }
 }

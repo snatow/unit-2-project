@@ -29,7 +29,12 @@ a:hover {
   color: red;
 }
 
-.photo-holder {
+.photo-holder1 {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.photo-holder2 {
   width: 400px;
   margin: 0 auto;
 }
@@ -48,6 +53,15 @@ a:hover {
   margin-left: -5px;
   margin-right: -5px;
   display: inline-block;
+}
+
+.photo-right {
+  width: 200px;
+  height: 133px;
+  margin-left: 9px;
+  margin-right: -5px;
+  display: inline-block;
+  text-align: right;
 }
 
 #text {
@@ -85,17 +99,28 @@ img {
 @media (min-width: 820px) {
 
   .photono {
-    background-color: lightgrey;
+    /*background-color: lightgrey;*/
     width: 200px;
     height: 133px;
-    margin-left: -5px;
+    margin-left: 0px;
     margin-right: -5px;
     display: inline-block;
   }
 
-  .photo-holder {
+  .photo-holder1 {
     width: 800px;
     margin: 0 auto;
+    height: 133px;
+    background-color: lightgrey;
+    background-image: linear-gradient(grey, lightgrey);
+  }
+
+  .photo-holder2 {
+    width: 800px;
+    margin: 0 auto;
+    height: 133px;
+    background-color: lightgrey;
+    background-image: linear-gradient(lightgrey, grey);
   }
 
   #text {
