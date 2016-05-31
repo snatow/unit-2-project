@@ -1,18 +1,29 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: lightblue;
+}
+
+body {
+  background-image: url("../images/paper.jpg");
 }
 
 h2 {
   text-align: center;
   padding-top: 15px;
   padding-bottom: 25px;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 36pt;
 }
 
 form {
   width: 300px;
   margin: 0 auto;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 16pt;
+}
+
+input {
+  height: 1.5em;
 }
 
 button:hover {
@@ -23,6 +34,8 @@ button:hover {
 a {
   text-decoration: none;
   color: blue;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 16pt;
 }
 
 a:hover {

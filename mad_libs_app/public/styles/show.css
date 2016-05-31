@@ -7,16 +7,22 @@ h2 {
   text-align: center;
   padding-top: 15px;
   padding-bottom: 20px;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 36pt;
 }
 
 h3 {
   text-align: center;
   padding-top: 10px;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 24pt;
 }
 
 a {
   text-decoration: none;
   color: blue;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 16pt;
 }
 
 a:hover {
@@ -49,7 +55,11 @@ a:hover {
   margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 20px;
-  font-size: 1.2em;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 16pt;
+  animation-name: slide;
+  animation-duration: .5s;
+  animation-timing-function: linear;
 }
 
 img {
@@ -65,6 +75,11 @@ img {
 #link {
   text-align: center;
   margin-bottom: 20px;
+}
+
+@keyframes slide {
+  0% {transform: translateX(-200px);}
+  100% {transform: translateX(0px);}
 }
 
 @media (min-width: 820px) {

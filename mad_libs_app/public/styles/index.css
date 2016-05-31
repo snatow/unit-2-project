@@ -7,17 +7,23 @@ h2 {
   text-align: center;
   padding-top: 15px;
   padding-bottom: 5px;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 36pt;
 }
 
 h3 {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 15px;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 24pt;
 }
 
 a {
   text-decoration: none;
   color: blue;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 16pt;
 }
 
 a:hover {
@@ -73,10 +79,10 @@ li {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 820px) {
 
   #existing {
-    width: 650px;
+    width: 800px;
     margin: 0 auto;
   }
 
@@ -87,4 +93,24 @@ li {
     padding-bottom: 5px;
   }
 
+  #options {
+    width: 804px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid black;
+    margin-bottom: 20px;
+  }
+
+  .opt {
+    width: 402px;
+    margin-right: -2px;
+    margin-left: -2px;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: lightblue;
+  }
+
+  .opt:nth-child(2n) {
+    background-color: lightblue;
+  }
 }
