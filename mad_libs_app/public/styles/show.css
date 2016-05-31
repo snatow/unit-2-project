@@ -18,6 +18,12 @@ h3 {
   font-size: 24pt;
 }
 
+footer {
+  margin-top: 20px;
+  background-color: lightblue;
+  height: 80px;
+}
+
 a {
   text-decoration: none;
   color: blue;

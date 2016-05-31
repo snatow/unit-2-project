@@ -10,8 +10,7 @@
     <a href="/mad-libs">Home Page</a>
   </div>
   <br>
-  <br>
-  <form action="/mad-libs/<%= _id %>" method="POST">
+  <form id="action" action="/mad-libs/<%= _id %>" method="POST">
     <div id="left" class="column">
       <label>Noun</label>
       <input type="text" name="noun1" value="<%= noun1 %>"></input><br><br>
@@ -57,5 +56,6 @@
     <input type="hidden" name="_method" value="DELETE"/>
     <button >Delete</button>
   </form>
+  <% include ../partials/footer.ejs %>
 </body>
 </html>

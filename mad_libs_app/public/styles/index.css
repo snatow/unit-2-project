@@ -44,7 +44,7 @@ a:hover {
 }
 
 .opt:nth-child(2n) {
-  background-color: lightgrey;
+  background-color: lightblue;
 }
 
 #existing {
@@ -61,6 +61,11 @@ li {
 .icon {
   height: 15px;
   margin-right: 5px;
+}
+
+footer {
+  background-color: lightblue;
+  height: 200px;
 }
 
 @media (min-width: 500px) {
@@ -83,6 +88,7 @@ li {
 
   #existing {
     width: 800px;
+    height: 200px;
     margin: 0 auto;
   }
 
@@ -107,7 +113,7 @@ li {
     margin-left: -2px;
     display: inline-block;
     box-sizing: border-box;
-    background-color: lightgrey;
+    background-color: lightblue;
   }
 
 }
