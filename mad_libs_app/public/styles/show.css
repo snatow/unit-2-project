@@ -32,11 +32,17 @@ a:hover {
 .photo-holder1 {
   width: 400px;
   margin: 0 auto;
+  height: 133px;
+  background-color: lightgrey;
+  background-image: linear-gradient(grey, lightgrey);
 }
 
 .photo-holder2 {
   width: 400px;
   margin: 0 auto;
+  height: 133px;
+  background-color: lightgrey;
+  background-image: linear-gradient(lightgrey, grey);
 }
 
 .photono {
